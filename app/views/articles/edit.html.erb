@@ -10,10 +10,9 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
-  <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </p>
+
+  <%= fckeditor_textarea("article", "content", :toolbarSet => 'Simple', :width => '100%', :height => '500px') %>
+
   <p>
     <%= f.label :start %><br />
     <%= f.datetime_select :start %>
