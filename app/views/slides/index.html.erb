@@ -1,0 +1,10 @@
+<div class="presentation">
+
+<% for article in @slides %>
+<div class="slide">
+  <h1><%=h article.title %></h1>
+  <%= article.content %>
+</div>
+<% end %>
+
+</div>

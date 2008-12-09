@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Articles: <%= controller.action_name %></title>
+  <!-- metadata -->
+  <meta name="generator" content="S5" />
+  <meta name="version" content="S5 1.1" />
+  <meta name="presdate" content="20050728" />
+  <meta name="author" content="Eric A. Meyer" />
+  <meta name="company" content="Complex Spiral Consulting" />
+  <!-- configuration parameters -->
+  <meta name="defaultView" content="slideshow" />
+  <meta name="controlVis" content="hidden" />
+  <!-- style sheet links -->
+  <%= stylesheet_link_tag 's5/slides.css', :media => "projection", :id => "slideProj" %>
+  <%= stylesheet_link_tag 's5/outline.css', :media => "screen", :id => "outlineStyle" %>
+  <%= stylesheet_link_tag 's5/print.css', :media => "print", :id => "slidePrint"  %>
+  <%= stylesheet_link_tag 's5/opera.css', :media => "projection", :id => "operaFix"  %>
+  <!-- S5 JS -->
+  <%= javascript_include_tag 's5/slides.js' %>
+  <%= javascript_include_tag 'clock.js' %>
+</head>
+<body>
+<div class="layout">
+<div id="controls"><!-- DO NOT EDIT --></div>
+<div id="currentSlide"><!-- DO NOT EDIT --></div>
+<div id="header">
+  
+</div>
+<div id="footer">
+  <h1>HBLVA Rosensteingasse</h1>
+  <h2><script language="JavaScript">displayTime();</script></h2>
+</div>
+</div>
+
+<%= yield  %>
+
+</body>
+</html>

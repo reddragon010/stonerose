@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= controller.controller_name %>: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'layout' %>
+</head>
+<body>
+<div id="page_margins">
+	<div id="page">
+		<div id="header">
+			<div id="topnav">
+				<h1><%=h APP_CONFIG['Appearence']['Headline'] %></h1>
+				<p>powered by StoneRose - an open-source school-information-system coded in RubyOnRails</p>
+			</div>
+		</div>
+		<!-- begin: main navigation #nav -->
+		<div id="nav">
+			<!-- skip anchor: navigation -->
+			<a id="navigation" name="navigation"></a>
+			<div id="nav_main">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Aricles</a></li>
+					<li><a href="#">Slideshow</a></li>
+					<li><a href="#">Help</a></li>
+					<li><a href="#">Logout</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- end: main navigation -->
+			<!-- begin: content area #main -->
+		<div id="main">
+			<!-- begin: #col1 - first float column -->
+			<div id="col1">
+				<div id="col1_content" class="clearfix">
+					<p style="color: green"><%= flash[:notice] %></p> 
+				</div>
+			</div>
+			<!-- end: #col1 -->
+			<!-- begin: #col3 static column -->
+			<div id="col3">
+				<div id="col3_content" class="clearfix">
+					<!-- skip anchor: content -->
+					<%= yield  %>
+				</div>
+				<!-- IE column clearing -->
+				<div id="ie_clearing">&nbsp;</div>
+			</div>
+			<!-- end: #col3 -->
+		</div>
+		<!-- end: #main -->
+		<!-- begin: #footer -->
+		<div id="footer">
+			Layout based on <a href="http://www.yaml.de/">YAML</a> | Idea, Code and Design by Michael Riedmann | Released under the GNU GPL
+		</div>
+		<!-- end: #footer -->
+	</div>
+</div>
+
+</body>
+</html>
