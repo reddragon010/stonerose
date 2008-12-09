@@ -1,0 +1,39 @@
+<% 
+admin_true = "accept.png"
+admin_false = "block.png"
+admin_true_gray = "accept_gray.png"
+admin_false_gray = "block_gray.png"
+%>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>EMail</th>
+		<th>Admin</th>
+		<th>SAdmin</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for user in @users %>
+	<tr>
+		<td><%=h user.login %></td>
+		<td><%=h user.email %></td>
+		<td><% if current_user.superadmin? %>
+			<%= link_to image_tag(user.admin? ? admin_true : admin_false) , {:action => "toggleAdmin", :id => user.id}, :confirm => 'Are you sure?' %>
+			<%else%>
+			<%= image_tag(user.admin? ? admin_true_gray : admin_false_gray)%>
+			<%end%>
+		</td>
+		<td><% if current_user.superadmin? %>
+			<%= link_to image_tag(user.superadmin? ? admin_true : admin_false), {:action => "toggleSuperAdmin", :id => user.id}, :confirm => 'Are you sure?' %>
+			<%else%>
+			<%= image_tag(user.admin? ? admin_true_gray : admin_false_gray)%>
+			<%end%>
+		</td>
+		<td><%= link_to image_tag("ShowA.png", :title => 'Show'), user %></td>
+		<td><%= link_to image_tag("EditA.png", :title => 'Edit'), edit_user_path(user) if current_user.superadmin? %></td>
+		<td><%= link_to image_tag("RemoveA.png", :title => 'Remove'), user, :confirm => 'Are you sure?', :method => :delete unless user == current_user || !current_user.superadmin? %></td> 
+	</tr>
+	<% end %>
+</table>

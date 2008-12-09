@@ -1,4 +1,8 @@
-<h1>Listing articles</h1>
+<% 
+active_true = "Play.png"
+active_false = "Pause.png"
+%>
+
 
 <table width="100%">
   <tr>
@@ -6,24 +10,34 @@
     <th>Title</th>
     <th>Start</th>
     <th>Stop</th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
   </tr>
 
 <% for article in @articles %>
   <tr style="background-color:<%=h article.is_intime? ? "#CFC" : "#FCC" %>">
-	<td><%= link_to image_tag(article.active_img), :action => "toggleActivity", :id => article.id if article.is_intime? %></td>
+	<td><%= link_to image_tag(article.active? ? active_true : active_false), :action => "toggleActivity", :id => article.id if article.is_intime? %></td>
     <td><%=h article.title %></td>
     <td><%=h article.start %></td>
     <td><%=h article.stop %></td>
-	<td> <%= link_to image_tag("ArrowUp.png"), {:action => "decWeight", :id => article.id} unless article.id == @articles.first.id %></td>
+	<% if authorized? %>
+	<td><%= link_to image_tag("ArrowUp.png"), {:action => "decWeight", :id => article.id} unless article.id == @articles.first.id %></td>
 	<td><%= link_to image_tag("ArrowDown.png"), {:action => "incWeight", :id => article.id} unless article.id == @articles.last.id %></td>
-    <td><%= link_to image_tag("ShowA.png"), article %></td>
-	<td><%= link_to image_tag("PreviewA.png"), {:controller => "slides",:action => "show", :id => article.id}, :popup => true %></td>
-    <td><%= link_to image_tag("EditA.png"), edit_article_path(article) %></td>
-    <td><%= link_to image_tag("RemoveA.png"), article, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
+    <td><%= link_to image_tag("ShowA.png", :title => 'Show'), article %></td>
+	<td><%= link_to image_tag("PreviewA.png", :title => 'Preview'), {:controller => "slides",:action => "show", :id => article.id}, :popup => true %></td>
+	<% if authorized? %>
+    <td><%= link_to image_tag("EditA.png", :title => 'Edit'), edit_article_path(article) %></td>
+    <td><%= link_to image_tag("RemoveA.png", :title => 'Remove'), article, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New article', new_article_path %>
+<%= link_to image_tag("New.png", :title => 'New Article'), new_article_path if authorized? %>

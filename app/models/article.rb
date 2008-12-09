@@ -1,10 +1,6 @@
 class Article < ActiveRecord::Base
-  def active_img
-    if self.active then
-      "Play.png"
-    else
-      "Pause.png"
-    end
+  def active?
+    self.active
   end
   
   def is_intime?

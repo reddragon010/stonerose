@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= controller.controller_name %>: <%= controller.action_name %></title>
+  <title><%=h APP_CONFIG['Appearence']['Headline'] %> | <%= controller.controller_name %>:<%= controller.action_name %></title>
   <%= stylesheet_link_tag 'layout' %>
 </head>
 <body>
@@ -12,6 +12,16 @@
 	<div id="page">
 		<div id="header">
 			<div id="topnav">
+				<% if logged_in? -%>
+				  <div>Logged in as <%= link_to_current_user :content_method => :login %></div>
+				  <div>(<%= link_to "Log out", logout_path, { :title => "Log out" }    %>)</div>
+				<% else -%>
+				  <div><%= link_to_login_with_IP 'Not logged in', :style => 'border: none;' %></div>
+				  <div><%= link_to "Log in",  login_path,  { :title => "Log in" } %> /
+				       <%= link_to "Sign up", signup_path, { :title => "Create an account" } %></div>
+				<% end -%>
+			</div>
+			<div id="headline">
 				<h1><%=h APP_CONFIG['Appearence']['Headline'] %></h1>
 				<p>powered by StoneRose - an open-source school-information-system coded in RubyOnRails</p>
 			</div>
@@ -22,12 +32,11 @@
 			<a id="navigation" name="navigation"></a>
 			<div id="nav_main">
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Aricles</a></li>
-					<li><a href="#">Slideshow</a></li>
-					<li><a href="#">Help</a></li>
-					<li><a href="#">Logout</a></li>
-					<li><a href="#">Login</a></li>
+					<li><%= link_to 'Home', '/content/home' %></li>
+					<li><%= link_to 'Aricles', :controller => 'articles' %></li>
+					<li><%= link_to 'Slideshow', {:controller => "slides",:action => "index"}, :popup => true %></li>
+					<li><%= link_to 'Users', :controller => 'users' if authorized? %>
+					<li><%= link_to 'Help', '/content/help' %></li>
 				</ul>
 			</div>
 		</div>
@@ -37,7 +46,7 @@
 			<!-- begin: #col1 - first float column -->
 			<div id="col1">
 				<div id="col1_content" class="clearfix">
-					<p style="color: green"><%= flash[:notice] %></p> 
+					<%= "<p style=\"text-align: center; background-color: #CCFFCC; border: 1px solid green; margin-left:10px; margin-right:10px;\"> #{flash[:notice]}</p>" if flash[:notice] %>
 				</div>
 			</div>
 			<!-- end: #col1 -->

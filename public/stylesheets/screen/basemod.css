@@ -35,7 +35,7 @@
 
   /* (en) Layout: width, background, borders */
   /* (de) Layout: Breite, Hintergrund, Rahmen */
-  #page_margins { min-width: 740px; max-width: 80em; background: #fff; }
+  #page_margins { min-width: 700px; max-width: 800px; background: #fff; }
   #page{ padding: 10px; }
 
   /* (en) Designing main layout elements */
@@ -43,17 +43,19 @@
   #header {
     color: #000;
     background: #fff repeat-x top left;
-    padding: 45px 2em 1em 20px; 
+    padding: 20px 2em 1em 20px; 
+	border: 1px solid #999;
   }
 
   #topnav { color: #aaa; background: transparent; }
-
+  #headline {  }
+  
   /* (en) adjustment of main navigation */
   /* (de) Anpassung der Hauptnavigation */
   #nav ul { margin-left: 20px; }
   #nav_main { background-color: #336; }
 
-  #main { background: #fff;padding:10px 0; }
+  #main { background: #fff;padding:10px 0;border: 1px solid #999; }
 
   #footer { 
     color:#666; 
@@ -80,12 +82,12 @@
    */
 
 
-  #col1 { width: 15%; }
+  #col1 {float: none; width: auto; }
 
  /* Hide right column | Rechte Spalte abschalten */
   #col2, #col2_content { display:none; }
 
-  #col3 { margin-left: 15%; margin-right: 0; }
+  #col3 { margin-left: 0; margin-right: 0; }
   #col3_content { padding: 10px 20px 10px 10px; }
 
   /*------------------------------------------------------------------------------------------------------*/

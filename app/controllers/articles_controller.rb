@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :login_required, :except => [:index, :show]
+  
   # GET /articles
   # GET /articles.xml
   def index
@@ -93,7 +95,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.update_attributes(params[:article])
         flash[:notice] = 'Article was successfully updated.'
-        format.html { redirect_to(:back) }
+        format.html { redirect_to(articles_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

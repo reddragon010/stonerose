@@ -45,7 +45,7 @@
   }
 
   h1,h2,h3,h4,h5,h6 { 
-  	font-family:"times new roman",times,serif; 
+  	font-family:"Arial",Arial,sans-serif; 
   	font-weight:bold; 
   	color:#666;
   	margin: 0 0 0.25em 0; 
@@ -166,8 +166,8 @@
   table.fixed { table-layout:fixed }
 
   th,td { padding: 0.5em; }
-  thead th { background: #444; color: #fff }
-  tbody th { background: #ccc; color: #333 }
+  thead th { background: #444; color: #fff; text-align:center; }
+  tbody th { background: #ccc; color: #333; text-align:center; }
   tbody th.sub { background: #ddd; color: #333 }
   
   /**
