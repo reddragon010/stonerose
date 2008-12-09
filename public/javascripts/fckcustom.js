@@ -31,3 +31,18 @@ FCKConfig.ToolbarSets["Simple"] = [
 	['TextColor','BGColor'],
 	['-','About']
 ] ;
+
+FCKConfig.ToolbarSets["Default"] = [
+	['Source'],
+	['Cut','Copy','Paste','PasteWord'],
+	['Undo','Redo','-','Find','Replace','-','SelectAll'],
+	'/',
+	['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],
+	['OrderedList','UnorderedList','-','Outdent','Indent'],
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
+	['Link','Unlink'],
+	'/',
+	['Image','Table','Rule','SpecialChar'],
+	['FontName','FontSize'],
+	['TextColor','BGColor'],
+] ;
