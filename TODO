@@ -1,0 +1,5 @@
+- Do some work on the slideshow
+- Adapt the FCKeditor configuration
+- write a upload-system to upload one picture per article and place them into the slideshow
+- make a nicer design to the user-frontend
+- write some tests
