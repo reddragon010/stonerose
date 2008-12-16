@@ -5,14 +5,17 @@
 <head>
   <title>Articles: <%= controller.action_name %></title>
   <!-- metadata -->
-  <meta name="generator" content="S5" />
-  <meta name="version" content="S5 1.1" />
-  <meta name="presdate" content="20050728" />
-  <meta name="author" content="Eric A. Meyer" />
-  <meta name="company" content="Complex Spiral Consulting" />
+  <meta name="generator" content="StoneRose based on S5" />
+  <meta name="version" content="StoneRose 0.1" />
+  <meta name="presdate" content="20081210" />
+  <meta name="author" content="Michael Riedmann" />
+  <meta name="company" content="DreamBlaze" />
   <!-- configuration parameters -->
   <meta name="defaultView" content="slideshow" />
   <meta name="controlVis" content="hidden" />
+  <meta name="playDelay" content="<%=h APP_CONFIG['Slideshow']['playDelay'] %>" />
+  <meta name="fadeDuration" content="<%=h APP_CONFIG['Slideshow']['fadeDuration'] %>" />
+  <meta name="incrDuration" content="<%=h APP_CONFIG['Slideshow']['incrDuration'] %>" />
   <!-- style sheet links -->
   <%= stylesheet_link_tag 's5/slides.css', :media => "projection", :id => "slideProj" %>
   <%= stylesheet_link_tag 's5/outline.css', :media => "screen", :id => "outlineStyle" %>

@@ -561,6 +561,15 @@ function defaultCheck() {
 		if (allMetas[i].name == 'controlVis') {
 			controlVis = allMetas[i].content;
 		}
+		if (allMetas[i].name == 'playDelay') {
+			playDelay = allMetas[i].content;
+		}
+		if (allMetas[i].name == 'fadeDuration') {
+			fadeDuration = allMetas[i].content;
+		}
+		if (allMetas[i].name == 'incrDuration') {
+			incrDuration = allMetas[i].content;
+		}
 	}
 }
 

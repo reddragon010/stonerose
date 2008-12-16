@@ -2,13 +2,13 @@
 FCKRelativePath = '';
 
 // DON'T CHANGE THESE
-FCKConfig.LinkBrowserURL = FCKConfig.BasePath + 'filemanager/browser/default/browser.html?Connector='+FCKRelativePath+'/attachment/command';
-FCKConfig.ImageBrowserURL = FCKConfig.BasePath + 'filemanager/browser/default/browser.html?Type=Image&Connector='+FCKRelativePath+'/attachment/command';
-FCKConfig.FlashBrowserURL = FCKConfig.BasePath + 'filemanager/browser/default/browser.html?Type=Flash&Connector='+FCKRelativePath+'/attachment/command';
+FCKConfig.LinkBrowserURL = FCKConfig.BasePath + 'filemanager/browser/default/browser.html?Connector='+FCKRelativePath+'/fckeditor/command';
+FCKConfig.ImageBrowserURL = FCKConfig.BasePath + 'filemanager/browser/default/browser.html?Type=Image&Connector='+FCKRelativePath+'/fckeditor/command';
+FCKConfig.FlashBrowserURL = FCKConfig.BasePath + 'filemanager/browser/default/browser.html?Type=Flash&Connector='+FCKRelativePath+'/fckeditor/command';
 
-FCKConfig.LinkUploadURL = FCKRelativePath+'/attachment/upload';
-FCKConfig.ImageUploadURL = FCKRelativePath+'/attachment/upload?Type=Image';
-FCKConfig.FlashUploadURL = FCKRelativePath+'/attachment/upload?Type=Flash';
+FCKConfig.LinkUploadURL = FCKRelativePath+'/fckeditor/upload';
+FCKConfig.ImageUploadURL = FCKRelativePath+'/fckeditor/upload?Type=Image';
+FCKConfig.FlashUploadURL = FCKRelativePath+'/fckeditor/upload?Type=Flash';
 FCKConfig.SpellerPagesServerScript = FCKRelativePath+'/fckeditor/check_spelling';
 FCKConfig.AllowQueryStringDebug = false;
 FCKConfig.SpellChecker = 'SpellerPages';
@@ -32,17 +32,17 @@ FCKConfig.ToolbarSets["Simple"] = [
 	['-','About']
 ] ;
 
-FCKConfig.ToolbarSets["Default"] = [
-	['Source'],
-	['Cut','Copy','Paste','PasteWord'],
-	['Undo','Redo','-','Find','Replace','-','SelectAll'],
+FCKConfig.ToolbarSets["Stonerose"] = [
+	['Source','DocProps','-','Templates'],
+	['Cut','Copy','Paste','PasteText'],
+	['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
 	'/',
 	['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],
-	['OrderedList','UnorderedList','-','Outdent','Indent'],
+	['OrderedList','UnorderedList','-','Outdent','Indent','Blockquote'],
 	['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
-	['Link','Unlink'],
+	['Image','Flash','Table','Rule','Smiley','SpecialChar','PageBreak'],
 	'/',
-	['Image','Table','Rule','SpecialChar'],
-	['FontName','FontSize'],
+	['Style','FontFormat','FontName','FontSize'],
 	['TextColor','BGColor'],
+	['FitWindow','ShowBlocks','-','About']		// No comma for the last row.
 ] ;

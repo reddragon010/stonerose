@@ -1,2 +1,6 @@
 Appearence:
     Headline: SiS der HBLVA Rosensteingasse
+Slideshow:
+    playDelay: 10000
+    fadeDuration: 500
+    incrDuration: 250
