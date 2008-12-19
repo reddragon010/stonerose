@@ -34,7 +34,7 @@
 			<div id="nav_main">
 				<ul>
 					<li><%= link_to 'Home', '/content/home' %></li>
-					<li><%= link_to 'Aricles', :controller => 'articles' %></li>
+					<li><%= link_to 'Articles', :controller => 'articles' %></li>
 					<li><%= link_to 'Slideshow', {:controller => "slides",:action => "index"}, :popup => true %></li>
 					<li><%= link_to 'Users', :controller => 'users' if authorized? %>
 					<li><%= link_to 'Help', '/content/help' %></li>
