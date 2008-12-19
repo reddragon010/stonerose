@@ -5,6 +5,7 @@ class SlidesController < ApplicationController
   
   def show
     @slide = Article.find(params[:id])
+    render :action => "show", :layout => "preview"
   end
   
 end
